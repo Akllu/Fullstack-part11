@@ -22,11 +22,11 @@ const LoginForm = () => {
       <form onSubmit={handleLogin}>
         <div>
           Username
-          <input {...username.input} />
+          <input id="username-input" {...username.input} />
         </div>
         <div>
           Password
-          <input {...password.input} />
+          <input id="password-input" {...password.input} />
         </div>
         <button id="login-button" type="submit">
           Login
