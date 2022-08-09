@@ -1,0 +1,6 @@
+# Ignore artifacts:
+coverage
+*.html
+node_modules
+build
+.eslintrc.js

@@ -8,7 +8,10 @@
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "lint": "eslint .",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand --forceExit",
-    "start:test": "cross-env NODE_ENV=test node index.js"
+    "start:test": "cross-env NODE_ENV=test node index.js",
+    "build:ui": "rm -rf build && cd client/ && npm run build && cp -r build ../",
+    "deploy": "git push heroku main",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy"
   },
   "author": "",
   "license": "ISC",
@@ -25,5 +28,10 @@
     "mongoose": "^6.2.4",
     "nodemon": "^2.0.15",
     "supertest": "^6.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-plugin-jest": "^26.8.2",
+    "eslint-plugin-react": "^7.30.1"
   }
 }

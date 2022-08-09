@@ -2,21 +2,26 @@ const Blog = require('../models/blog')
 
 const initialBlogs = [
   {
-    title: "Canonical string reduction",
-    author: "Edsger W. Dijkstra",
-    url: "http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html",
+    title: 'Canonical string reduction',
+    author: 'Edsger W. Dijkstra',
+    url: 'http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html',
     likes: 12,
   },
   {
-    title: "First class tests",
-    author: "Robert C. Martin",
-    url: "http://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.htmll",
+    title: 'First class tests',
+    author: 'Robert C. Martin',
+    url: 'http://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.htmll',
     likes: 10,
-  }
+  },
 ]
 
 const nonExistingId = async () => {
-  const blog = new Blog({ title: 'willremovethissoon', author: 'willremovethissoon', url: 'willremovethissoon', likes: 0 })
+  const blog = new Blog({
+    title: 'willremovethissoon',
+    author: 'willremovethissoon',
+    url: 'willremovethissoon',
+    likes: 0,
+  })
   await blog.save()
   await blog.remove()
 
@@ -29,5 +34,7 @@ const blogsInDb = async () => {
 }
 
 module.exports = {
-  initialBlogs, nonExistingId, blogsInDb
+  initialBlogs,
+  nonExistingId,
+  blogsInDb,
 }
